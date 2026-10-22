@@ -31,8 +31,8 @@ Students should modify only `feature_matching.py`. Do not modify `main.py`, `gui
 
 For every reference descriptor `i`:
 
-1. compute the L2 distance to every frame descriptor `j` with your own loop over `j` (one pair at a time; `math.dist(reference_row, frame_row)` is allowed);
-2. keep the smallest distance `d1` (and its index `j1`) and the second-smallest distance `d2`;
+1. compute the L2 distance from reference descriptor `i` to every frame descriptor `j`, storing each distance and index pair (e.g., `(d_ij, j)`) in a list;
+2. sort the distance list in ascending order to easily get the smallest distance `d1` (with index `j1`) and the second-smallest distance `d2`;
 3. accept the match only if `d1 < ratio_threshold * d2` (strict `<`), and then append `(i, j1)`;
 4. return the list of accepted `(reference_index, frame_index)` pairs.
 
