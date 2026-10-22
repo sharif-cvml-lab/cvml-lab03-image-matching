@@ -119,7 +119,7 @@ python main.py
 ### Reference image
 
 - **Capture Reference** (`C`) uses the currently displayed scene frame. Pause the webcam first if you want a steady shot.
-- **Load Reference Image…** opens a separate image file. A sample is provided in `assets/reference_sample.jpg`: show it on a phone/tablet or print it, and point the webcam at it.
+- **Load Reference Image…** opens a separate image file.
 - **Clear Reference** removes the reference and its cached features.
 - The reference stays fixed until you replace or clear it. `Reset Defaults` restores parameters and settings but keeps the reference.
 - Good references are flat, well-textured objects. Plain or repetitive objects produce few unambiguous descriptors.
@@ -160,8 +160,6 @@ cvml-lab03-image-matching/
 ├── video_thread.py
 ├── annotation.py
 ├── config.py
-├── assets/
-│   └── reference_sample.jpg
 └── feature_matching.py      # The only file students should modify
 ```
 
