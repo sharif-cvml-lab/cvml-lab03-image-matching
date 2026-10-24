@@ -155,17 +155,11 @@ def render_match_view(
             ]
         for indices, color in groups:
             for index in indices:
-                if color == COLOR_MATCH_INLIER:
-                    circle_dim = 3
-                    line_width = 1
-                elif color == COLOR_MATCH_OUTLIER:
-                    circle_dim = 6
-                    line_width = 2
                 p1 = (int(ref_canvas[index, 0]), int(ref_canvas[index, 1]))
                 p2 = (int(frame_canvas[index, 0]), int(frame_canvas[index, 1]))
-                cv2.line(canvas, p1, p2, color, line_width, cv2.LINE_AA)
-                cv2.circle(canvas, p1, circle_dim, color, -1, cv2.LINE_AA)
-                cv2.circle(canvas, p2, circle_dim, color, -1, cv2.LINE_AA)
+                cv2.line(canvas, p1, p2, color, 1, cv2.LINE_AA)
+                cv2.circle(canvas, p1, 3, color, -1, cv2.LINE_AA)
+                cv2.circle(canvas, p2, 3, color, -1, cv2.LINE_AA)
                 drawn += 1
 
     # Quadrilateral outline on top of the lines.
